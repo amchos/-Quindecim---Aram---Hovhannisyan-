@@ -1,0 +1,162 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* HEADER STYLES */
+header {
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+/* MAIN STYLES START*/
+
+main {
+
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0;
+}
+.card-container {
+
+}
+
+.card {
+  width: 15rem;
+
+}
+
+.user-photo {
+
+}
+
+
+/* BUTTON STYLES START */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.generete-btn {
+  font-size: 2em;
+  background: #3498db;
+  color: #fff;
+  border: 0.25rem solid #3498db;
+  padding: 0.85em 0.75em;
+  margin: 1rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+}
+.generete-btn:hover {
+  color: #3498db;
+}
+.generete-btn::after {
+  content: "";
+  background: #ecf0f1;
+  position: absolute;
+  z-index: -1;
+  padding: 0.85em 0.75em;
+  display: block;
+}
+.generete-btn::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: scale(0, 0) rotate(-180deg);
+  transition: all 0.3s ease;
+}
+
+.generete-btn:hover::after {
+  transform: scale(1, 1) rotate(0deg);
+  transition: all 0.3s ease-out;
+}
+
+/* BUTTON STYLES END */
