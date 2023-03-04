@@ -1,25 +1,32 @@
-const dive = document.querySelector(".container");
-const API_URL = "https://randomuser.me/api/";
+const USER_API = "https://randomuser.me/api/";
+const DOG_API = "https://dog.ceo/api/breeds/image/random";
+const CAT_API = "http://aws.random.cat/meow";
+const FACT_CAT = "https://catfact.ninja/fact";
 const userImage = document.querySelector(".user-image");
+const dogImage = document.querySelector(".dog-img");
+const catImage = document.querySelector(".cat-img");
+const button = document.querySelector(".generete-btn");
 
-fetch(API_URL)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    let gender = data.results[0].gender;
-    let firstName = data.results[0].name.first;
-    let lastName = data.results[0].name.last;
-    let imgLarge =  data.results[0].picture.large;
-    let imgMedium =  data.results[0].picture.medium;
-    let imgThumb =  data.results[0].picture.thumbnail;
 
-    userImage.src = imgLarge;
-    console.log(firstName);
-    console.log(lastName);
-    console.log(gender);
-    console.log(imgLarge);
-    console.log(imgMedium);
-    console.log(imgThumb);
+async function fetchRequest(url) {
+  return fetch(url)
+  .then((response) => response.json())
+  .then((data) => data)
+}
+button.addEventListener('click', async () => {
+  let userResponse = await fetchRequest(USER_API);
+  let dogResponse = await fetchRequest(DOG_API);
+  let catResponse = await fetchRequest(CAT_API);
 
-  });
+  catImage.src = catResponse.file;
+  dogImage.src = dogResponse.message;
+  userImage.src = userResponse.results[0].picture.large;
+  // console.log(result);
+})
+
+
+
+
+
+
+
