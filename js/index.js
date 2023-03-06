@@ -20,15 +20,23 @@ async function fetchRequest(url) {
   }
 }
 button.addEventListener("click", async () => {
-  let userResponse = await fetchRequest(USER_API);
-  let dogResponse = await fetchRequest(DOG_API);
-  let catResponse = await fetchRequest(CAT_API);
-  let factResponse = await fetchRequest(FACT_CAT);
+  const userResponse = await fetchRequest(USER_API);
+  const dogResponse = await fetchRequest(DOG_API);
+  const catResponse = await fetchRequest(CAT_API);
+  const factResponse = await fetchRequest(FACT_CAT);
+  const userDataName = userResponse.results[0].name;
+  const fullName = Object.values(userDataName);
+  const userCountry = userResponse.results[0].location;
+  const fullAdress = Object.values(userCountry);
 
   catImage.src = catResponse.file;
   dogImage.src = dogResponse.message;
   userImage.src = userResponse.results[0].picture.large;
-  
+  userModalInfo.innerHTML = `Name: ${fullName[0]} ${fullName[1]} ${fullName[2]} <br>
+                            Country: ${fullAdress[3]}, ${fullAdress[1]}, ${fullAdress[2]} <br>
+                            Email: ${userResponse.results[0].email}<br>
+                            Phone: ${userResponse.results[0].phone}`;
+
   funFact.innerHTML = factResponse.fact;
 });
 
@@ -66,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
     overlay = document.querySelector(".js-overlay-modal"),
     closeButtons = document.querySelectorAll(".js-modal-close");
 
-  /* Перебираем массив кнопок */
   modalButtons.forEach(function(item) {
     item.addEventListener("click", function(e) {
       e.preventDefault();
