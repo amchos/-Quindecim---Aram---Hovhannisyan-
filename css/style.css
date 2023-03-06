@@ -82,6 +82,7 @@ select {
 /* -------------HEADER STYLES ----------------*/
 header {
     width: 100%;
+    margin-top: 2%;
 }
 .logo-box {
     display: flex;
