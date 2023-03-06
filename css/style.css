@@ -77,10 +77,11 @@ select {
   }
 }
 
-/* HEADER STYLES */
+/*-------------------КОНЕЦ ОБНУЛЕНИЯ----*/
+
+/* -------------HEADER STYLES ----------------*/
 header {
     width: 100%;
-    border-bottom: 1px solid black;
 }
 .logo-box {
     display: flex;
@@ -88,9 +89,7 @@ header {
     justify-content: space-around;
 }
 
-
-
-/* MAIN STYLES START*/
+/* -------------MAIN STYLES START-------------*/
 
 main {
 
@@ -103,15 +102,11 @@ main {
 }
 
 .card-container {
-  padding: 20px;
-  display: inline-block;
-  background-color: #414b52;
-  color: #fff;
-  border-radius: 3px;
+
 }
 
 .card-container:hover {
-  outline: 2px solid blueviolet;
+  outline: 3px solid blueviolet;
 }
 
 .card {
@@ -130,11 +125,12 @@ main {
 }
 
 
-/* BUTTON STYLES START */
+/* ----------BUTTON STYLES START--------------- */
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   font-size: 1.5em;
 }
 .generete-btn {
@@ -166,18 +162,16 @@ main {
   background-color: white;
 }
 
-/* сброс браузерных стилей для фокуса */
 .generete-btn::-moz-focus-inner {
   border: none;
 }
-/* BUTTON STYLES END */
+.button-info {
+  margin-top: 1%;
+}
 
-/* MODAL STYLES */
-/* Стили для подложки */
+/*------------- MODAL WINDOWS STYLES------------ */
 
 .overlay {
-   
-  /* Скрываем подложку  */
   opacity: 0;
   visibility: hidden;
   
@@ -190,7 +184,6 @@ main {
   z-index: 20;
   transition: .3s all;
 }
-
 
 /* Стили для модальных окон */
 

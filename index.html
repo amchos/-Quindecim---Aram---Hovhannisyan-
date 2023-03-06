@@ -11,7 +11,7 @@
   <body>
     <header>
       <div class="logo-box">
-        <h1>The Sims 100500</h1>
+        <h1>The Short Stuck</h1>
       </div>
     </header>
     <main>
@@ -20,15 +20,6 @@
           <div class="card">
             <img
               class="user-photo user-image"
-              src="img/user.jpeg"
-              alt="User Photo"
-              />
-          </div>
-        </div>
-        <div class="card-container js-open-modal" data-modal="3">
-          <div class="card">
-            <img
-              class="user-photo dog-img"
               src="img/user.jpeg"
               alt="User Photo"
               />
@@ -43,13 +34,22 @@
               />
           </div>
         </div>
+        <div class="card-container js-open-modal" data-modal="3">
+          <div class="card">
+            <img
+              class="user-photo dog-img"
+              src="img/user.jpeg"
+              alt="User Photo"
+              />
+          </div>
+        </div>
       </div>
       <div class="btn">
         <button class="generete-btn">GENERATE</button>
+        <span class="button-info">Press the button and then click on image</span>
       </div>
       <!-- MODAL-->
       <div class="modal" data-modal="1">
-        <!--   Svg иконка для закрытия окна  -->
         <svg
           class="modal__cross js-modal-close"
           xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@
               />
             </svg>
             <h1 class="modal__title">Fun fact</h1>
-            <p class="cat-modal-info">Press the button for info</p>
+            <p class="cat-modal-info">Press the button to generete fun fact about cats</p>
             <div>
               
             </div>
@@ -92,13 +92,12 @@
                 9.112-9.192 9.18 9.1z"
                 />
               </svg>
-              <h1 class="modal__title">NO DATA FOR DOGS</h1>
+              <h1 class="modal__title dog-title">Dog</h1>
+              <p class="dog-modal-info"></p>
               <div>
                 
               </div>
             </div>
-
-          <!-- Подложка под модальным окном -->
           <div class="overlay js-overlay-modal"></div>
         </main>
       </body>

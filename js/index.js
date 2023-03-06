@@ -8,6 +8,7 @@ const dogImage = document.querySelector(".dog-img");
 const catImage = document.querySelector(".cat-img");
 const button = document.querySelector(".generete-btn");
 const funFact = document.querySelector(".cat-modal-info");
+const dogInfo = document.querySelector(".dog-modal-info");
 const userModalInfo = document.querySelector(".user-modal-info");
 
 async function fetchRequest(url) {
@@ -32,12 +33,12 @@ button.addEventListener("click", async () => {
   catImage.src = catResponse.file;
   dogImage.src = dogResponse.message;
   userImage.src = userResponse.results[0].picture.large;
+  funFact.innerHTML = factResponse.fact;
+  dogInfo.innerHTML = "Nothing about dogs((";
   userModalInfo.innerHTML = `Name: ${fullName[0]} ${fullName[1]} ${fullName[2]} <br>
                             Country: ${fullAdress[3]}, ${fullAdress[1]}, ${fullAdress[2]} <br>
                             Email: ${userResponse.results[0].email}<br>
                             Phone: ${userResponse.results[0].phone}`;
-
-  funFact.innerHTML = factResponse.fact;
 });
 
 //MODAL
