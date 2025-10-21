@@ -1,6 +1,6 @@
 const USER_API = "https://randomuser.me/api/";
 const DOG_API = "https://dog.ceo/api/breeds/image/random";
-const CAT_API = "http://aws.random.cat/meow";
+const CAT_API = "https://api.thecatapi.com/v1/images/search";
 const FACT_CAT = "https://catfact.ninja/fact";
 
 const userImage = document.querySelector(".user-image");
@@ -30,7 +30,9 @@ button.addEventListener("click", async () => {
   const userCountry = userResponse.results[0].location;
   const fullAdress = Object.values(userCountry);
 
-  catImage.src = catResponse.file;
+  console.log(catResponse)
+
+  catImage.src = catResponse[0].url;
   dogImage.src = dogResponse.message;
   userImage.src = userResponse.results[0].picture.large;
   funFact.innerHTML = factResponse.fact;
